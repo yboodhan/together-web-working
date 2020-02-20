@@ -38,6 +38,7 @@ $(function() {
             $("#viewer").hide();
             $("#searcher").hide();
             $("#all-disconnect").hide();
+            $('#login').show();
             $("#messages").html("");
         }
     }

@@ -7,7 +7,7 @@ h1, h2, .slogan, label, button, small {
     overflow-y: scroll;
 }
 
-.login {
+#login {
     height: 90vh;
     padding-top: 10vh;
 }
