@@ -50,7 +50,10 @@ $(function() {
 
     // If a name is entered with valid key, allow user to connect
     $('#author').on('blur change keyup', function(ev) {
-        $('#connect').prop('disabled', $(this).val().length == 0 );
+        $('#secret').prop('disabled', $(this).val().length == 0 );
+    });
+    $('#secret').on('blur change keyup', function(ev) {
+        $('#connect').prop('disabled', $(this).val() != 'secret' );
     });
 
     // Initially, fields are set to disabled/unconnected
