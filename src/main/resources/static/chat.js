@@ -11,7 +11,10 @@ $(function() {
         $('#messages').append(
             '<div>' +
             '<p>' +
-            msg.time + ' | ' + msg.author + ' said: ' + msg.content +
+            '<span style="color:darkgray">' +
+            msg.time +
+            '</span>' + ' ' +
+            msg.author + ' : ' + msg.content + msg.color +
             '</p>' +
             '</div>'
         );
