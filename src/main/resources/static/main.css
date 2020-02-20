@@ -3,7 +3,7 @@ h1, h2, .slogan, label, button, small {
 }
 
 #messages {
-    height: 50vh;
+    height: 40vh;
     overflow-y: scroll;
 }
 
@@ -14,4 +14,8 @@ h1, h2, .slogan, label, button, small {
 
 #viewer, #searcher, #all-disconnect {
     display: none;
+}
+
+.controls-container {
+    margin-top: 1em;
 }
