@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One&display=swap" rel="stylesheet">
+    <link href="/main.css" rel="stylesheet">
+
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+
+    <link rel='icon' href='favicon.ico' type='image/x-icon'/>
+    <script src="/chat.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Together Web</title>
+</head>
+<body>
+    <main id="main-content" class="container">
+        <div class="row">
+            <h1 class="text-center">Together Web</h1>
+            <p class="text-center slogan">Find. Watch. Chat.</p>
+        </div>
+
+        <div class="row" id="login">
+            <form class="col-sm-offset-4 col-sm-4">
+                <div class="form-group">
+                    <small>Join Together Web and get started on watching YouTube videos with your friends today!</small>
+                </div>
+                <div class="form-group">
+                    <label for="author">Name:</label>
+                    <input type="text" id="author" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="secret">Secret key:</label>
+                    <input type="password" class="form-control" id="secret">
+                </div>
+                <div class="form-group">
+                    <button id="connect" type="submit" class="btn btn-default">Connect</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="row text-center" id="all-disconnect">
+            <button id="disconnect" type="submit" class="btn btn-default" disabled="disabled">Disconnect</button>
+        </div>
+
+        <div class="row" id="viewer">
+            <div class="col-sm-6" id="all-video">
+                <h2 class="text-center">Watch</h2>
+
+                    <div class="row chat-container">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <div class="row controls-container">
+                        add video controllers for video here
+                    </div>
+            </div>
+
+            <div class="col-sm-6" id="all-chat">
+                <h2 class="text-center">Chat</h2>
+                    <div class="row chat-container">
+                        <div class="col-sm-12">
+                            <div id="messages">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row controls-container">
+                        <form>
+                            <div class="col-sm-8 form-group">
+                                <input type="text" id="content" class="form-control">
+                            </div>
+                            <div class="col-sm-4 form-group">
+                                <button id="send" type="submit" class="btn btn-default">Send</button>
+                            </div>
+                        </form>
+                    </div>
+            </div>
+        </div>
+
+        <div class="row" id="searcher">
+            <h2 class="text-center">Find</h2>
+                Input search bar and find top 10 results to display as scroll
+                Add watch button to watch
+        </div>
+    </main>
+</body>
+</html>

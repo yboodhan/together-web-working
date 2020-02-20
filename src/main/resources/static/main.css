@@ -1,0 +1,17 @@
+h1, h2, .slogan, label, button, small {
+    font-family: 'Julius Sans One', sans-serif;
+}
+
+#messages {
+    height: 50vh;
+    overflow-y: scroll;
+}
+
+.login {
+    height: 90vh;
+    padding-top: 10vh;
+}
+
+#viewer, #searcher, #all-disconnect {
+    display: none;
+}
