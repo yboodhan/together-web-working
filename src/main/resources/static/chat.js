@@ -13,8 +13,7 @@ $(function() {
             '<p>' +
             '<span style="color:darkgray">' +
             msg.time +
-            '</span>' + ' ' +
-            msg.author + ' : ' + msg.content + msg.color +
+            '</span>' + ' ' + msg.author + ': ' + msg.content +
             '</p>' +
             '</div>'
         );
