@@ -43,7 +43,7 @@ function execute() {
 
             var videoTitle = '<strong class="video-title text-truncate">' + title + '</strong>';
             var videoDescription = '<small class="text-truncate">' + description + '</small>';
-            var videoImage = '<pre>' + '<img id="thumbnail"' +
+            var videoImage = '<pre>' + '<img class="thumbnail"' +
                                 'src="' + thumbnail + '"' +
                                 'alt="Youtube video thumbnail."' +
                                 'class="img-fluid">' + '</pre>';
@@ -53,6 +53,16 @@ function execute() {
                                     '<div>' + videoTitle + ' ' + videoDescription + '</div>' +
                                 '</div>' + '<hr/>');
         })
+
+        $('.thumbnail').click(
+            function changeVideo() {
+                console.log('click')
+                // e.preventDefault();
+                // console.log(e.target)
+                // var queuedVideo = e.target.prop("src");
+                // console.log('changing video now to...' + queuedVideo)
+            }
+        )
     })
     .catch(
         function(err) {
