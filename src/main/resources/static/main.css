@@ -2,7 +2,7 @@ h1, h2, .slogan, label, button, small {
     font-family: 'Julius Sans One', sans-serif;
 }
 
-#messages {
+#messages, #results {
     height: 40vh;
     overflow-y: scroll;
 }
@@ -18,4 +18,12 @@ h1, h2, .slogan, label, button, small {
 
 .controls-container {
     margin-top: 1em;
+}
+
+.video-display {
+    display: inline-block;
+}
+
+pre {
+    margin-right: 1em;
 }

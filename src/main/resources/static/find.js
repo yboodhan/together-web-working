@@ -2,7 +2,7 @@ var API_KEY = GOOGLE_KEY
 
 $('#search').click(
     function loadClient() {
-        $('#results').append('<pre>' + 'Searching now...' + '</pre>');
+        $('#results').append('<h1>' + 'Searching now...' + '</h1>');
         gapi.client.setApiKey(API_KEY);
 
         return gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
@@ -37,11 +37,21 @@ function execute() {
 
         // There are actual results!
         $.each(allResultVideos, function(index, video){
-            var vidTitle = video.snippet.title;
-            var vidThumburl =  video.snippet.thumbnails.default.url;
-            var vidThumbimg = '<pre><img id="thumb" src="'+vidThumburl+'" alt="No  Image  Available." style="width:204px;height:128px"></pre>';
+            var title = video.snippet.title;
+            var description = video.snippet.description;
+            var thumbnail =  video.snippet.thumbnails.default.url;
 
-            $('#results').append('<pre>' + vidTitle + vidThumbimg +   '</pre>');
+            var videoTitle = '<strong class="video-title text-truncate">' + title + '</strong>';
+            var videoDescription = '<small class="text-truncate">' + description + '</small>';
+            var videoImage = '<pre>' + '<img id="thumbnail"' +
+                                'src="' + thumbnail + '"' +
+                                'alt="Youtube video thumbnail."' +
+                                'class="img-fluid">' + '</pre>';
+
+            $('#results').append('<div class="video-display">' +
+                                    '<div>' + videoImage + '</div>' +
+                                    '<div>' + videoTitle + ' ' + videoDescription + '</div>' +
+                                '</div>' + '<hr/>');
         })
     })
     .catch(

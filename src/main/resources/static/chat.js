@@ -31,13 +31,14 @@ $(function() {
             $("#all-disconnect").show();
             $("#viewer").show();
             $("#searcher").show();
-            $('#content').focus();
+            $('#viewer').focus();
             $('#login').hide();
         }
 
         // If not connected, hide all features
         else {
             $("#viewer").hide();
+            $('#search-results').hide();
             $("#searcher").hide();
             $("#all-disconnect").hide();
             $('#login').show();
