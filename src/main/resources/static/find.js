@@ -37,13 +37,16 @@ function execute() {
 
         // There are actual results!
         $.each(allResultVideos, function(index, video){
+            var youtube_base_url = "https://www.youtube.com/embed/";
             var title = video.snippet.title;
             var description = video.snippet.description;
             var thumbnail =  video.snippet.thumbnails.default.url;
+            var videoUrl = youtube_base_url + video.id.videoId;
 
             var videoTitle = '<strong class="video-title text-truncate">' + title + '</strong>';
             var videoDescription = '<small class="text-truncate">' + description + '</small>';
             var videoImage = '<pre>' + '<img class="thumbnail"' +
+                                'data-url="' + videoUrl + '"' +
                                 'src="' + thumbnail + '"' +
                                 'alt="Youtube video thumbnail."' +
                                 'class="img-fluid">' + '</pre>';
@@ -56,11 +59,9 @@ function execute() {
 
         $('.thumbnail').click(
             function changeVideo() {
-                console.log('click')
-                // e.preventDefault();
-                // console.log(e.target)
-                // var queuedVideo = e.target.prop("src");
-                // console.log('changing video now to...' + queuedVideo)
+                var queuedVideo = $(this).data("url");
+                console.log('changing video now to...' + queuedVideo);
+                $('#watching').prop('src', queuedVideo);
             }
         )
     })
