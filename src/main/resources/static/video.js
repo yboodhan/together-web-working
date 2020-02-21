@@ -1,29 +1,38 @@
-var tag = document.createElement('script');
+$(function() {
+    'use strict';
 
-tag.src = "https://www.youtube.com/iframe_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    // Creates script tag for API
+    var tag = document.createElement('script');
 
-var player;
-function onYouTubeIframeAPIReady() {
-    player = new YT.Player('watching', {
-        videoId: 'M7lc1UVf-VE',
-        events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-        }
-    });
-    console.log('video is set')
-}
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    console.log('inserted a script tag')
 
-function onPlayerReady(event) {
-    console.log('video is ready to be played')
 
-}
+    var player;
+    // Executed after script runs
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('watching', {
+            videoId: 'M7lc1UVf-VE',
+            events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange
+            }
+        });
+        console.log('video is set')
+    }
 
-function onPlayerStateChange(event) {
-    console.log('video state is changing')
-}
-function stopVideo() {
-    player.stopVideo();
-}
+    function onPlayerReady(event) {
+        console.log('video is ready to be played')
+
+    }
+
+    function onPlayerStateChange(event) {
+        console.log('video state is changing')
+    }
+
+    function stopVideo() {
+        player.stopVideo();
+    }
+});
