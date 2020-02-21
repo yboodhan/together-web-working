@@ -99,5 +99,10 @@ $(function() {
         $('#content').val("");
     });
 
+    $('#watching').change(function(e) {
+        e.preventDefault();
+        console.log('video has changed!')
+    })
+
 
 });
