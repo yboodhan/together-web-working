@@ -1,4 +1,5 @@
-var API_KEY = 'AIzaSyDJmHsxf-vFhHJtr2Xpv_vflyJL9ciu1C8'
+var API_KEY = GOOGLE_KEY
+
 $('#search').click(
     function loadClient() {
         $('#results').append('<h1>' + 'Searching now...' + '</h1>');
